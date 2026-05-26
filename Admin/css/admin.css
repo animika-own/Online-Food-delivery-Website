@@ -1,0 +1,126 @@
+/* General body style */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ddd !important;
+}
+
+/* Sidebar styling */
+.sidebar {
+  height: 100vh;
+  background-color: #fff;
+  border-right: 1px solid #eee;
+  transition: transform 0.3s ease; /* added for mobile slide */
+}
+
+/* Sidebar links */
+.sidebar nav a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  line-height: 50px;
+  padding-left: 15px;
+}
+
+.sidebar nav a:hover {
+  background-color: rgb(82, 6, 6);
+  color: #fff;
+  border-radius: 30px;
+  transition: all 1s;
+}
+
+.sidebar nav a i {
+  padding-right: 15px;
+}
+
+/* Sidebar logo */
+.sidebar img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.sidebar .img-heading {
+  color: #640303;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Toggle button for mobile */
+.sidebar-toggle-btn {
+  display: none !important; /* hide by default */
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1300;
+  font-size: 28px;
+  cursor: pointer;
+  color: #640303;
+}
+
+/* Show toggle button only on mobile */
+@media (max-width: 991px) {
+  .sidebar-toggle-btn {
+    display: block !important;
+  }
+}
+
+/* Dashboard link special styling */
+#dashboard {
+  background-color: rgb(82, 6, 6);
+  color: #fff;
+  border-radius: 30px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+/* Right section (top bar) */
+.right {
+  height: 60px;
+  background-color: #fff;
+  color: #640303;
+}
+
+.right h2 {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* =======================
+   Mobile sidebar slide
+   ======================= */
+/* Mobile sidebar slide */
+@media (max-width: 991px) {
+  .sidebar {
+    left: -250px; /* hide sidebar initially */
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 1200;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    transition: left 0.3s ease; /* smooth slide */
+  }
+
+  /* Slide in when active */
+  .sidebar.sidebar-active {
+    left: 0; /* fully visible */
+  }
+
+  /* Toggle button visible only on mobile */
+  .sidebar-toggle-btn {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1300;
+    font-size: 28px;
+    cursor: pointer;
+    color: #640303;
+  }
+
+  .right {
+    margin-left: 0; /* full width for content */
+    transition: margin-left 0.3s ease;
+  }
+}
+
